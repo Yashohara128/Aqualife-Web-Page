@@ -26,7 +26,7 @@ body {
 
 /* Product Glassmorphism Cards */
 .product-card {
-    background: rgba(255, 255, 255, 0.93) !important;
+    background: rgba(255, 255, 255, 0.95) !important;
     -webkit-backdrop-filter: blur(10px);
     backdrop-filter: blur(10px);
     border-radius: 20px;
@@ -54,26 +54,31 @@ body {
     z-index: 10;
 }
 
-/* Product Image Box */
+/* 🖼️ Product Image Box - Perfect Fit Setup */
 .product-img-wrapper {
     width: 100%;
-    height: 220px;
-    overflow: hidden;
-    background-color: #f8f9fa;
+    height: 260px; /* උස වැඩි කරලා පැහැදිලි කළා */
+    background: #ffffff; /* සුදු පාට Clean Background එකක් දුන්නා */
     display: flex;
     align-items: center;
     justify-content: center;
+    padding: 20px; /* පින්තූරය කැපෙන්නේ නැතුව ඉඩ තියෙන්න */
+    border-bottom: 1px solid #e2e8f0;
 }
 
 .product-img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: transform 0.5s ease;
+    max-width: 100%;
+    max-height: 100%;
+    width: auto;
+    height: auto;
+    object-fit: contain; /* 👈 FIXED: Image එක කැපෙන්නේ නැතුව මුළු එකම ලස්සනට පෙන්නනවා */
+    filter: drop-shadow(0 5px 12px rgba(0, 0, 0, 0.15)); /* Product එක ඇසට පැහැදිලිව පේන්න Soft Shadow එකක් */
+    transition: transform 0.4s ease, filter 0.4s ease;
 }
 
 .product-card:hover .product-img {
-    transform: scale(1.05);
+    transform: scale(1.06); /* Hover කරද්දී ලස්සනට Zoom වෙනවා */
+    filter: drop-shadow(0 8px 18px rgba(2, 132, 199, 0.25));
 }
 
 /* Price & Installment Boxes */

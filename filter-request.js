@@ -16,7 +16,7 @@ const translations = {
         home_desc: "RO + UV + TDS Controller Multi-stage Pure Filtration for Families.",
         full_price_label: "Full Price:",
         discount_tag: "Special Offer",
-        home_discount_note: "🎉 Special Discounted Price for Full Cash Payment!",
+        home_discount_note: "Special Discounted Price for Full Cash Payment!",
         unit: "/ unit",
         easy_plan_title: "Easy Installment Plan:",
         home_inst_1: "First Down Payment LKR 25,000 you have to pay LKR 5,000 / Month (08 Months)",
@@ -33,7 +33,7 @@ const translations = {
         comm_plan_title: "Commercial Installment Plan:",
         ind_inst_1: "Pay LKR 15,400 / Month (12 Months)",
         ind_inst_2: "Flexible Business Payment Options",
-        ind_inst_3: "2 Years Commercial Warranty Included",
+        ind_inst_3: "01 Years Commercial Warranty Included",
         btn_req_ind: "Request Industry Filter",
 
         // Form Modal Labels
@@ -74,7 +74,7 @@ const translations = {
         home_desc: "පවුලේ සැමට පිරිසිදු ජලය ලබාදෙන RO + UV + TDS Controller බහු-පියවර තාක්ෂණය.",
         full_price_label: "සම්පූර්ණ මිළ:",
         discount_tag: "විශේෂ වට්ටම්",
-        home_discount_note: "🎉 එකවර ගෙවීමේදී විශේෂ වට්ටම් මිල!",
+        home_discount_note: " එකවර ගෙවීමේදී විශේෂ වට්ටම් මිල!",
         unit: "/ එකකයක්",
         easy_plan_title: "පහසු වාරික ගෙවීමේ ක්‍රමය:",
         home_inst_1: "මුලින් LKR 25,000 ක් ගෙවා මසකට LKR 5,000 බැගින් (මාස 08)",
@@ -91,7 +91,7 @@ const translations = {
         comm_plan_title: "ව්‍යාපාරික වාරික ගෙවීමේ ක්‍රමය:",
         ind_inst_1: "මසකට LKR 15,400 බැගින් (මාස 12)",
         ind_inst_2: "ව්‍යාපාර සඳහා පහසු ගෙවීමේ ක්‍රම",
-        ind_inst_3: "වසර 2ක වගකීම් සහතිකය සහිතයි",
+        ind_inst_3: "වසර 01ක වගකීම් සහතිකය සහිතයි",
         btn_req_ind: "කාර්මික ෆිල්ටරය ලබාගන්න",
 
         // Form Modal Labels

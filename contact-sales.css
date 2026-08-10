@@ -1,0 +1,88 @@
+/* CDN Fallback styles injection override */
+.d-none {
+    display: none !important;
+}
+
+body {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('login background.jpg');
+    background-position: center center;  
+    background-size: 45% auto;
+    
+    min-height: 100vh;
+    margin: 0;
+    justify-content: center;
+}
+
+
+.btn-group .btn-light.active {
+    background-color: #0284c7 !important;
+    color: white !important;
+    border-color: #0284c7 !important;
+}
+
+.sales-main-heading {
+    background: transparent;
+    -webkit-backdrop-filter: transparent(5px);
+    backdrop-filter: transparent(5px);
+    
+}
+
+/* ================= 👥 SALES REPRESENTATIVE CARDS LOOKS ================= */
+.sales-card {
+    background: rgba(255, 255, 255, 0.92) !important;
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.3s;
+}
+
+.sales-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3) !important;
+}
+
+/* Perfect Round Circle Profiling Picture Frames */
+.sales-img-wrapper {
+    width: 130px;
+    height: 130px;
+    border-radius: 50% !important;
+    overflow: hidden;
+    background-color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Force image to stretch, crop and cover the entire circle properly */
+.sales-avatar {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important; 
+    object-position: center top;  
+    transform: scale(1) !important; 
+
+.sales-name {
+    font-size: 1.3rem;
+    letter-spacing: -0.3px;
+}
+
+/* Premium Navigation Buttons Setup */
+.btn-primary {
+    background-color: #0284c7;
+    border: none;
+    transition: background-color 0.2s;
+}
+
+.btn-primary:hover {
+    background-color: #0369a1;
+}
+
+.btn-success {
+    background-color: #198754;
+    border: none;
+    transition: background-color 0.2s;
+}
+
+.btn-success:hover {
+    background-color: #146c43;
+}

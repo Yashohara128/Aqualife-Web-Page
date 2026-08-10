@@ -1,0 +1,101 @@
+.d-none {
+    display: none !important;
+}
+
+body {
+    
+    background-image: linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)), url('login\ background.jpg');
+
+    background-position: center center;  
+    background-attachment: fixed; 
+    
+    min-height: 100vh;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Language selector placed exactly at top right corner */
+.lang-selector-top {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    z-index: 1000;
+}
+
+.lang-selector-top .btn.active {
+    background-color: #0284c7;
+    color: white;
+    border-color: #0284c7;
+}
+
+/* Main architecture login card design */
+.login-container {
+    background: rgba(255, 255, 255, 0.9); /* Slightly transparent white container */
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    padding: 40px 30px;
+    border-radius: 20px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+    width: 100%;
+    max-width: 450px;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+/* Circle design for the company logo */
+.logo-wrapper {
+    width: 110px;
+    height: 110px;
+    border-radius: 50%;
+    overflow: hidden;
+    background-color: white;
+    border: 3px solid #0284c7;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.logo-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.form-control-lg {
+    border-radius: 10px;
+    border: 1px solid #cbd5e1;
+    font-size: 1rem;
+    background-color: #ffffff;
+}
+
+.btn-primary {
+    background-color: #0284c7;
+    border: none;
+    border-radius: 10px;
+}
+.btn-primary:hover {
+    background-color: #0369a1;
+}
+
+.btn-custom-gray {
+    background-color: #e5e7eb;
+    color: #1f2937;
+    border: 1px solid #d1d5db;
+    border-radius: 10px;
+}
+.btn-custom-gray:hover {
+    background-color: #d1d5db;
+}
+
+.btn-link {
+    color: #64748b;
+}
+.btn-link:hover {
+    color: #334155;
+}
+
+.letter-spacing-2 {
+    letter-spacing: 4px;
+}

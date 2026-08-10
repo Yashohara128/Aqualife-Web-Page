@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aqualife Waters - Dashboard</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="main.css">
+</head>
+<body>
+
+    <div class="container-fluid top-header-wrapper px-4 mt-3">
+        <div class="row align-items-center">
+            
+            <div class="col-md-3 col-4 text-start">
+                <div class="logo-wrapper-dash">
+                    <img src="Aqualife logo.jpeg" alt="Aqualife Logo" class="logo-img">
+                </div>
+            </div>
+
+            <div class="col-md-6 col-4 text-center">
+                <div class="header-title-box py-2 px-3">
+                    <h2 class="fw-bold mb-0 text-dark d-none d-md-block" data-i18n="main_title">Aqualife Waters</h2>
+                    <p class="text-muted small mb-0 d-none d-md-block"><span data-i18n="txt_welcome">Welcome,</span> <span id="userDisplayName" class="fw-bold text-primary">User</span></p>
+                </div>
+            </div>
+
+            <div class="col-md-3 col-4 text-end">
+                <div class="d-flex flex-column align-items-end gap-2">
+                    <div class="btn-group" role="group">
+                        <button type="button" class="btn btn-sm btn-light active" id="btn-en">EN</button>
+                        <button type="button" class="btn btn-sm btn-light" id="btn-si">සිංහල</button>
+                    </div>
+                    <button type="button" class="btn btn-danger btn-sm fw-semibold" id="btn-logout" aria-label="Logout" title="Logout">
+                    <i class="fa-solid fa-right-from-bracket"></i>
+                    </button>
+                </div>
+            </div>
+
+        </div> </div> <div class="container my-4">
+        <div class="row justify-content-center">
+            <div class="col-lg-10">
+                
+                <div class="company-details-card p-4 p-md-5">
+                    
+                    <div class="mb-5">
+                        <h3 class="fw-bold text-primary border-bottom pb-2 mb-3" data-i18n="section_about">ABOUT US</h3>
+                        <p class="lead-text text-dark" id="txt-about-p1">Aqua Life Waters (Pvt) Ltd is a trusted pioneer in the water purification industry in Sri Lanka, committed to providing safe, clean, and healthy drinking water for every household and business. Since our inception, we have specialized in the design, manufacturing, and distribution of high-quality water filtration systems tailored to meet the diverse needs of Sri Lankan families and organizations.</p>
+                        <p class="lead-text text-dark mt-3" id="txt-about-p2">We believe that pure water is the foundation of a healthy life. With this vision, Aqua Life Waters has become a household name, offering innovative water filters that combine modern technology, durability, and affordability. Our wide product range from domestic filters to advanced commercial purification solutions ensures that every customer finds the right fit for their lifestyle.</p>
+                    </div>
+
+                    <div class="row g-4 mb-5">
+                        <div class="col-md-6">
+                            <div class="inner-info-box p-3 border-start border-primary border-4 rounded-end">
+                                <h4 class="fw-bold text-primary" data-i18n="section_mission"><i class="fa-solid fa-bullseye me-2"></i>Our Mission</h4>
+                                <p class="text-muted mb-0" id="txt-mission-body">To deliver safe, reliable, and eco-friendly water purification solutions that enhance the health and well-being of our customers while contributing to a sustainable future.</p>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="inner-info-box p-3 border-start border-info border-4 rounded-end">
+                                <h4 class="fw-bold text-info" data-i18n="section_vision"><i class="fa-solid fa-eye me-2"></i>Our Vision</h4>
+                                <p class="text-muted mb-0" id="txt-vision-body">To be the most trusted water filter brand in Sri Lanka, ensuring that every home and business has access to pure drinking water.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div>
+                        <h4 class="fw-bold text-dark mb-4" data-i18n="section_why">Why Choose Us?</h4>
+                        <ul class="list-unstyled custom-features-list">
+                            <li class="mb-3 d-flex align-items-start">
+                                <i class="fa-solid fa-circle-check text-success fa-lg mt-1 me-3"></i>
+                                <div>
+                                    <strong class="text-dark d-block" data-i18n="feat_1_title">Proven Experience:</strong>
+                                    <span class="text-muted" data-i18n="feat_1_desc">A decade of service in Sri Lanka's water purification market.</span>
+                                </div>
+                            </li>
+                            <li class="mb-3 d-flex align-items-start">
+                                <i class="fa-solid fa-circle-check text-success fa-lg mt-1 me-3"></i>
+                                <div>
+                                    <strong class="text-dark d-block" data-i18n="feat_2_title">Innovative Technology:</strong>
+                                    <span class="text-muted" data-i18n="feat_2_desc">Filters designed to tackle local water challenges.</span>
+                                </div>
+                            </li>
+                            <li class="mb-3 d-flex align-items-start">
+                                <i class="fa-solid fa-circle-check text-success fa-lg mt-1 me-3"></i>
+                                <div>
+                                    <strong class="text-dark d-block" data-i18n="feat_3_title">Strong After-Sales Service:</strong>
+                                    <span class="text-muted" data-i18n="feat_3_desc">Reliable customer care and technical support across all regions.</span>
+                                </div>
+                            </li>
+                            <li class="mb-3 d-flex align-items-start">
+                                <i class="fa-solid fa-circle-check text-success fa-lg mt-1 me-3"></i>
+                                <div>
+                                    <strong class="text-dark d-block" data-i18n="feat_4_title">Commitment to Quality:</strong>
+                                    <span class="text-muted" data-i18n="feat_4_desc">Every product is built to international standards and tested for durability.</span>
+                                </div>
+                            </li>
+                            <li class="mb-3 d-flex align-items-start">
+                                <i class="fa-solid fa-circle-check text-success fa-lg mt-1 me-3"></i>
+                                <div>
+                                    <strong class="text-dark d-block" data-i18n="feat_5_title">Trusted by Thousands:</strong>
+                                    <span class="text-muted" data-i18n="feat_5_desc">From families to businesses, our name represents reliability and health.</span>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+
+                </div> </div>
+        </div>
+
+        <div class="row mt-4 mb-5 text-center">
+            <div class="col-12">
+                <a href="services.html" target="_self" class="btn btn-primary btn-lg px-5 py-3 fw-bold rounded-pill shadow shadow-intensity" id="btn-explore" data-i18n="btn_explore">
+                    Our Services <i class="fa-solid fa-arrow-right-long ms-2"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="main.js"></script>
+</body>
+</html>

@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Request Water Filter - Aqualife Waters</title>
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="filter-request.css">
+</head>
+<body>
+
+    <!-- Top Navigation Bar -->
+    <div class="container py-4">
+        <a href="services.html" class="btn btn-outline-light rounded-pill px-4 back-btn">
+            <i class="fa-solid fa-arrow-left me-2"></i> Back to Services
+        </a>
+    </div>
+
+    <!-- Page Header -->
+    <div class="container text-center mb-5 text-white">
+        <h1 class="display-5 fw-bold page-title">Choose Your Water Filter</h1>
+        <p class="lead opacity-90">Select the perfect filtration system for your home or business with easy installment plans.</p>
+    </div>
+
+    <!-- Product Cards Container -->
+    <div class="container pb-5">
+        <div class="row g-4 justify-content-center">
+
+            <!-- 1️⃣ HOME WATER FILTER CARD -->
+            <div class="col-lg-5 col-md-6">
+                <div class="card product-card h-100 border-0 shadow-lg">
+                    <div class="badge-tag">Most Popular</div>
+                    
+                    <!-- Product Image -->
+                    <div class="product-img-wrapper">
+                        <img src="filter request.jpg" alt="Home Water Filter" class="product-img">
+                    </div>
+
+                    <div class="card-body p-4 d-flex flex-column">
+                        <h3 class="card-title fw-bold text-dark mb-2">Home Water Filter</h3>
+                        <p class="text-muted small mb-3">RO + UV + TDS Controller Multi-stage Pure Filtration for Families.</p>
+
+                        <!-- Price Section -->
+                        <div class="price-box mb-3 p-3 rounded">
+                            <span class="text-muted small d-block">Full Price:</span>
+                            <h2 class="price-text mb-0">LKR 45,000 <span class="fs-6 text-muted">/ unit</span></h2>
+                        </div>
+
+                        <!-- Installment Payment Details -->
+                        <div class="installment-box p-3 rounded mb-4">
+                            <div class="d-flex align-items-center mb-2">
+                                <i class="fa-solid fa-credit-card text-primary fs-5 me-2"></i>
+                                <strong class="text-dark">Easy Installment Plan:</strong>
+                            </div>
+                            <ul class="list-unstyled small mb-0 text-secondary">
+                                <li><i class="fa-solid fa-check text-success me-2"></i>Pay <strong>LKR 3,750 / Month</strong> (12 Months)</li>
+                                <li><i class="fa-solid fa-check text-success me-2"></i>0% Interest for selected Credit Cards</li>
+                                <li><i class="fa-solid fa-check text-success me-2"></i>Free Delivery & Free Installation</li>
+                            </ul>
+                        </div>
+
+                        <!-- Action Button -->
+                        <button class="btn btn-primary btn-lg w-100 mt-auto rounded-pill fw-bold request-btn" onclick="openRequestModal('Home Water Filter', 'LKR 45,000')">
+                            <i class="fa-solid fa-cart-shopping me-2"></i> Request Home Filter
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 2️⃣ INDUSTRY WATER FILTER CARD -->
+            <div class="col-lg-5 col-md-6">
+                <div class="card product-card h-100 border-0 shadow-lg">
+                    <div class="badge-tag bg-warning text-dark">Commercial Grade</div>
+
+                    <!-- Product Image -->
+                    <div class="product-img-wrapper">
+                        <img src="electrolyzer.jpg" alt="Industry Water Filter" class="product-img">
+                    </div>
+
+                    <div class="card-body p-4 d-flex flex-column">
+                        <h3 class="card-title fw-bold text-dark mb-2">Industry Water Filter</h3>
+                        <p class="text-muted small mb-3">Heavy Duty High Capacity Filtration System for Factories & Offices.</p>
+
+                        <!-- Price Section -->
+                        <div class="price-box mb-3 p-3 rounded">
+                            <span class="text-muted small d-block">Full Price:</span>
+                            <h2 class="price-text mb-0">LKR 185,000 <span class="fs-6 text-muted">/ unit</span></h2>
+                        </div>
+
+                        <!-- Installment Payment Details -->
+                        <div class="installment-box p-3 rounded mb-4">
+                            <div class="d-flex align-items-center mb-2">
+                                <i class="fa-solid fa-building-columns text-primary fs-5 me-2"></i>
+                                <strong class="text-dark">Commercial Installment Plan:</strong>
+                            </div>
+                            <ul class="list-unstyled small mb-0 text-secondary">
+                                <li><i class="fa-solid fa-check text-success me-2"></i>Pay <strong>LKR 15,400 / Month</strong> (12 Months)</li>
+                                <li><i class="fa-solid fa-check text-success me-2"></i>Flexible Business Payment Options</li>
+                                <li><i class="fa-solid fa-check text-success me-2"></i>2 Years Commercial Warranty Included</li>
+                            </ul>
+                        </div>
+
+                        <!-- Action Button -->
+                        <button class="btn btn-success btn-lg w-100 mt-auto rounded-pill fw-bold request-btn" onclick="openRequestModal('Industry Water Filter', 'LKR 185,000')">
+                            <i class="fa-solid fa-industry me-2"></i> Request Industry Filter
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- 📝 ORDER / REQUEST POPUP MODAL -->
+    <div class="modal fade" id="requestModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content border-0 shadow-lg rounded-4">
+                <div class="modal-header bg-primary text-white rounded-top-4">
+                    <h5 class="modal-title fw-bold"><i class="fa-solid fa-file-signature me-2"></i> Filter Request Form</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body p-4">
+                    <form id="filterForm">
+                        <div class="mb-3">
+                            <label class="form-label text-muted small fw-bold">Selected Product</label>
+                            <input type="text" id="selectedProduct" class="form-control fw-bold bg-light" readonly>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label text-muted small fw-bold">Your Full Name</label>
+                            <input type="text" class="form-control" placeholder="e.g. Yashohara" required>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label text-muted small fw-bold">Phone Number</label>
+                            <input type="tel" class="form-control" placeholder="07X XXX XXXX" required>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label text-muted small fw-bold">Payment Plan Option</label>
+                            <select class="form-select">
+                                <option value="full">Full Payment (Outright Purchase)</option>
+                                <option value="installment" selected>Monthly Installment Plan (12 Months)</option>
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label text-muted small fw-bold">Delivery / Installation Address</label>
+                            <textarea class="form-control" rows="2" placeholder="Enter full address" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary w-100 rounded-pill py-2 fw-bold">
+                            Submit Filter Request
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="filter-request.js"></script>
+</body>
+</html>

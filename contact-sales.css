@@ -7,12 +7,10 @@ body {
     background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('login background.jpg');
     background-position: center center;  
     background-size: 45% auto;
-    
     min-height: 100vh;
     margin: 0;
     justify-content: center;
 }
-
 
 .btn-group .btn-light.active {
     background-color: #0284c7 !important;
@@ -22,9 +20,8 @@ body {
 
 .sales-main-heading {
     background: transparent;
-    -webkit-backdrop-filter: transparent(5px);
-    backdrop-filter: transparent(5px);
-    
+    -webkit-backdrop-filter: blur(5px);
+    backdrop-filter: blur(5px);
 }
 
 /* ================= 👥 SALES REPRESENTATIVE CARDS LOOKS ================= */
@@ -60,6 +57,7 @@ body {
     object-fit: cover !important; 
     object-position: center top;  
     transform: scale(1) !important; 
+} /* 👈 FIXED: මෙතන වරහන (}) දැම්මා */
 
 .sales-name {
     font-size: 1.3rem;
@@ -85,4 +83,4 @@ body {
 
 .btn-success:hover {
     background-color: #146c43;
-}
+} /* 👈 FIXED: මෙතන ] වෙනුවට } හැදුවා */

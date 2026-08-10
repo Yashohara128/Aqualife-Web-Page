@@ -1,9 +1,9 @@
 // Current state tracking variables
 let currentType = 'home'; 
 let currentProductName = 'Home Water Filter';
-let currentPrice = 'LKR 69,900';
+let currentPrice = 'LKR 54,990';
 
-// 🌐 Translations Dictionary with All Individual Installment Options
+// 🌐 Translations Dictionary with LKR 54,990 Updates
 const translations = {
     en: {
         top_back_btn: "Back to Services",
@@ -15,6 +15,8 @@ const translations = {
         home_title: "Home Water Filter",
         home_desc: "RO + UV + TDS Controller Multi-stage Pure Filtration for Families.",
         full_price_label: "Full Price:",
+        discount_tag: "Special Offer",
+        home_discount_note: "🎉 Special Discounted Price for Full Cash Payment!",
         unit: "/ unit",
         easy_plan_title: "Easy Installment Plan:",
         home_inst_1: "First Down Payment LKR 25,000 you have to pay LKR 5,000 / Month (08 Months)",
@@ -48,8 +50,8 @@ const translations = {
         ph_phone: "07X XXX XXXX",
         ph_address: "Enter full address",
         
-        // Dynamic Dropdown Options (Home Filter)
-        opt_home_full: "Full Payment (LKR 69,900 - Outright Purchase)",
+        // Dynamic Dropdown Options (Home Filter - LKR 54,990)
+        opt_home_full: "Full Payment - Cash Discount (LKR 54,990 - Outright Purchase)",
         opt_home_plan1: "Down Payment LKR 25,000 + LKR 5,000/mo (08 Months)",
         opt_home_plan2: "Down Payment LKR 15,000 + LKR 5,490/mo (10 Months)",
         opt_home_plan3: "Down Payment LKR 10,000 + LKR 5,990/mo (10 Months)",
@@ -71,6 +73,8 @@ const translations = {
         home_title: "නිවසේ භාවිතයට ජල පෙරහන",
         home_desc: "පවුලේ සැමට පිරිසිදු ජලය ලබාදෙන RO + UV + TDS Controller බහු-පියවර තාක්ෂණය.",
         full_price_label: "සම්පූර්ණ මිළ:",
+        discount_tag: "විශේෂ වට්ටම්",
+        home_discount_note: "🎉 එකවර ගෙවීමේදී විශේෂ වට්ටම් මිල!",
         unit: "/ එකකයක්",
         easy_plan_title: "පහසු වාරික ගෙවීමේ ක්‍රමය:",
         home_inst_1: "මුලින් LKR 25,000 ක් ගෙවා මසකට LKR 5,000 බැගින් (මාස 08)",
@@ -104,8 +108,8 @@ const translations = {
         ph_phone: "07X XXX XXXX",
         ph_address: "සම්පූර්ණ ලිපිනය ඇතුළත් කරන්න",
 
-        // Dynamic Dropdown Options (Home Filter)
-        opt_home_full: "සම්පූර්ණ මුදල ගෙවීම (LKR 69,900)",
+        // Dynamic Dropdown Options (Home Filter - LKR 54,990)
+        opt_home_full: "එකවර ගෙවීම - විශේෂ වට්ටම් මිල (LKR 54,990)",
         opt_home_plan1: "මුලින් LKR 25,000 + මසකට LKR 5,000 බැගින් (මාස 08)",
         opt_home_plan2: "මුලින් LKR 15,000 + මසකට LKR 5,490 බැගින් (මාස 10)",
         opt_home_plan3: "මුලින් LKR 10,000 + මසකට LKR 5,990 බැගින් (මාස 10)",
@@ -124,11 +128,11 @@ function populatePaymentOptions(type, lang) {
     const select = document.getElementById('paymentPlanSelect');
     if (!select) return;
 
-    select.innerHTML = ''; // clear options
+    select.innerHTML = '';
 
     if (type === 'home') {
         const options = [
-            { val: 'full', text: translations[lang].opt_home_full },
+            { val: 'full_54990', text: translations[lang].opt_home_full },
             { val: 'plan1_25k', text: translations[lang].opt_home_plan1 },
             { val: 'plan2_15k', text: translations[lang].opt_home_plan2 },
             { val: 'plan3_10k', text: translations[lang].opt_home_plan3 }
@@ -186,11 +190,10 @@ function changeLanguage(lang) {
         btnSi.classList.remove('btn-light', 'active');
     }
 
-    // Refresh dynamic options for current modal context
     populatePaymentOptions(currentType, lang);
 }
 
-// 📦 Open Modal Function with Custom Options
+// 📦 Open Modal Function
 function openRequestModal(productName, price, type) {
     currentProductName = productName;
     currentPrice = price;

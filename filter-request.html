@@ -13,17 +13,23 @@
 </head>
 <body>
 
-    <!-- Top Navigation Bar -->
-    <div class="container py-4">
+    <!-- Top Navigation Bar with Language Switcher -->
+    <div class="container py-4 d-flex justify-content-between align-items-center">
         <a href="services.html" class="btn btn-outline-light rounded-pill px-4 back-btn">
-            <i class="fa-solid fa-arrow-left me-2"></i> Back to Services
+            <i class="fa-solid fa-arrow-left me-2"></i> <span data-i18n="top_back_btn">Back to Services</span>
         </a>
+
+        <!-- 🌐 Language Switcher Buttons -->
+        <div class="btn-group rounded-pill overflow-hidden border border-light" role="group">
+            <button type="button" class="btn btn-sm btn-light active px-3 fw-bold" id="lang-en" onclick="changeLanguage('en')">EN</button>
+            <button type="button" class="btn btn-sm btn-outline-light px-3 fw-bold" id="lang-si" onclick="changeLanguage('si')">සිංහල</button>
+        </div>
     </div>
 
     <!-- Page Header -->
     <div class="container text-center mb-5 text-white">
-        <h1 class="display-5 fw-bold page-title">Choose Your Water Filter</h1>
-        <p class="lead opacity-90">Select the perfect filtration system for your home or business with easy installment plans.</p>
+        <h1 class="display-5 fw-bold page-title" data-i18n="page_title">Choose Your Water Filter</h1>
+        <p class="lead opacity-90" data-i18n="page_sub">Select the perfect filtration system for your home or business with easy installment plans.</p>
     </div>
 
     <!-- Product Cards Container -->
@@ -33,7 +39,7 @@
             <!-- 1️⃣ HOME WATER FILTER CARD -->
             <div class="col-lg-5 col-md-6">
                 <div class="card product-card h-100 border-0 shadow-lg">
-                    <div class="badge-tag">Most Popular</div>
+                    <div class="badge-tag" data-i18n="badge_home">Most Popular</div>
                     
                     <!-- Product Image -->
                     <div class="product-img-wrapper">
@@ -41,33 +47,33 @@
                     </div>
 
                     <div class="card-body p-4 d-flex flex-column">
-                        <h3 class="card-title fw-bold text-dark mb-2">Home Water Filter</h3>
-                        <p class="text-muted small mb-3">RO + UV + TDS Controller Multi-stage Pure Filtration for Families.</p>
+                        <h3 class="card-title fw-bold text-dark mb-2" data-i18n="home_title">Home Water Filter</h3>
+                        <p class="text-muted small mb-3" data-i18n="home_desc">RO + UV + TDS Controller Multi-stage Pure Filtration for Families.</p>
 
                         <!-- Price Section -->
                         <div class="price-box mb-3 p-3 rounded">
-                            <span class="text-muted small d-block">Full Price:</span>
-                            <h2 class="price-text mb-0">LKR 69,900 <span class="fs-6 text-muted">/ unit</span></h2>
+                            <span class="text-muted small d-block" data-i18n="full_price_label">Full Price:</span>
+                            <h2 class="price-text mb-0">LKR 69,900 <span class="fs-6 text-muted" data-i18n="unit">/ unit</span></h2>
                         </div>
 
                         <!-- Installment Payment Details -->
                         <div class="installment-box p-3 rounded mb-4">
                             <div class="d-flex align-items-center mb-2">
                                 <i class="fa-solid fa-credit-card text-primary fs-5 me-2"></i>
-                                <strong class="text-dark">Easy Installment Plan:</strong>
+                                <strong class="text-dark" data-i18n="easy_plan_title">Easy Installment Plan:</strong>
                             </div>
                             <ul class="list-unstyled small mb-0 text-secondary">
-                                <li><i class="fa-solid fa-check text-success me-2"></i>First Down Payment LKR 25,000 you have to pay <strong>LKR 5,000 / Month</strong> (08 Months)</li>
-                                <li><i class="fa-solid fa-check text-success me-2"></i>First Down Payment LKR 15,000 you have to pay <strong>LKR 5,490 / Month</strong> (10 Months)</li>
-                                <li><i class="fa-solid fa-check text-success me-2"></i>First Down Payment LKR 10,000 you have to pay <strong>LKR 5,990 / Month</strong> (10 Months)</li>
-                                <li><i class="fa-solid fa-check text-success me-2"></i>0% Interest for selected Credit Cards</li>
-                                <li><i class="fa-solid fa-check text-success me-2"></i>Free Delivery & Free Installation</li>
+                                <li class="mb-1"><i class="fa-solid fa-check text-success me-2"></i><span data-i18n="home_inst_1">First Down Payment LKR 25,000 you have to pay LKR 5,000 / Month (08 Months)</span></li>
+                                <li class="mb-1"><i class="fa-solid fa-check text-success me-2"></i><span data-i18n="home_inst_2">First Down Payment LKR 15,000 you have to pay LKR 5,490 / Month (10 Months)</span></li>
+                                <li class="mb-1"><i class="fa-solid fa-check text-success me-2"></i><span data-i18n="home_inst_3">First Down Payment LKR 10,000 you have to pay LKR 5,990 / Month (10 Months)</span></li>
+                                <li class="mb-1"><i class="fa-solid fa-check text-success me-2"></i><span data-i18n="card_interest">0% Interest for selected Credit Cards</span></li>
+                                <li><i class="fa-solid fa-check text-success me-2"></i><span data-i18n="free_del_inst">Free Delivery & Free Installation</span></li>
                             </ul>
                         </div>
 
-                        <!-- Action Button -->
-                        <button class="btn btn-primary btn-lg w-100 mt-auto rounded-pill fw-bold request-btn" onclick="openRequestModal('Home Water Filter', 'LKR 45,000')">
-                            <i class="fa-solid fa-cart-shopping me-2"></i> Request Home Filter
+                        <!-- Action Button (Home Filter) -->
+                        <button class="btn btn-primary btn-lg w-100 mt-auto rounded-pill fw-bold request-btn" onclick="openRequestModal('Home Water Filter', 'LKR 69,900', 'home')">
+                            <i class="fa-solid fa-cart-shopping me-2"></i> <span data-i18n="btn_req_home">Request Home Filter</span>
                         </button>
                     </div>
                 </div>
@@ -76,39 +82,39 @@
             <!-- 2️⃣ INDUSTRY WATER FILTER CARD -->
             <div class="col-lg-5 col-md-6">
                 <div class="card product-card h-100 border-0 shadow-lg">
-                    <div class="badge-tag bg-warning text-dark">Commercial Grade</div>
+                    <div class="badge-tag bg-warning text-dark" data-i18n="badge_ind">Commercial Grade</div>
 
                     <!-- Product Image -->
                     <div class="product-img-wrapper">
-                        <img src="" alt="Industry Water Filter" class="product-img">
+                        <img src="electrolyzer.jpg" alt="Industry Water Filter" class="product-img">
                     </div>
 
                     <div class="card-body p-4 d-flex flex-column">
-                        <h3 class="card-title fw-bold text-dark mb-2">Industry Water Filter</h3>
-                        <p class="text-muted small mb-3">Heavy Duty High Capacity Filtration System for Factories & Offices.</p>
+                        <h3 class="card-title fw-bold text-dark mb-2" data-i18n="ind_title">Industry Water Filter</h3>
+                        <p class="text-muted small mb-3" data-i18n="ind_desc">Heavy Duty High Capacity Filtration System for Factories & Offices.</p>
 
                         <!-- Price Section -->
                         <div class="price-box mb-3 p-3 rounded">
-                            <span class="text-muted small d-block">Full Price:</span>
-                            <h2 class="price-text mb-0">LKR 185,000 <span class="fs-6 text-muted">/ unit</span></h2>
+                            <span class="text-muted small d-block" data-i18n="full_price_label">Full Price:</span>
+                            <h2 class="price-text mb-0">LKR 185,000 <span class="fs-6 text-muted" data-i18n="unit">/ unit</span></h2>
                         </div>
 
                         <!-- Installment Payment Details -->
                         <div class="installment-box p-3 rounded mb-4">
                             <div class="d-flex align-items-center mb-2">
                                 <i class="fa-solid fa-building-columns text-primary fs-5 me-2"></i>
-                                <strong class="text-dark">Commercial Installment Plan:</strong>
+                                <strong class="text-dark" data-i18n="comm_plan_title">Commercial Installment Plan:</strong>
                             </div>
                             <ul class="list-unstyled small mb-0 text-secondary">
-                                <li><i class="fa-solid fa-check text-success me-2"></i>Pay <strong>LKR 15,400 / Month</strong> (12 Months)</li>
-                                <li><i class="fa-solid fa-check text-success me-2"></i>Flexible Business Payment Options</li>
-                                <li><i class="fa-solid fa-check text-success me-2"></i>2 Years Commercial Warranty Included</li>
+                                <li class="mb-1"><i class="fa-solid fa-check text-success me-2"></i><span data-i18n="ind_inst_1">Pay LKR 15,400 / Month (12 Months)</span></li>
+                                <li class="mb-1"><i class="fa-solid fa-check text-success me-2"></i><span data-i18n="ind_inst_2">Flexible Business Payment Options</span></li>
+                                <li><i class="fa-solid fa-check text-success me-2"></i><span data-i18n="ind_inst_3">2 Years Commercial Warranty Included</span></li>
                             </ul>
                         </div>
 
-                        <!-- Action Button -->
-                        <button class="btn btn-success btn-lg w-100 mt-auto rounded-pill fw-bold request-btn" onclick="openRequestModal('Industry Water Filter', 'LKR 185,000')">
-                            <i class="fa-solid fa-industry me-2"></i> Request Industry Filter
+                        <!-- Action Button (Industry Filter) -->
+                        <button class="btn btn-success btn-lg w-100 mt-auto rounded-pill fw-bold request-btn" onclick="openRequestModal('Industry Water Filter', 'LKR 185,000', 'industry')">
+                            <i class="fa-solid fa-industry me-2"></i> <span data-i18n="btn_req_ind">Request Industry Filter</span>
                         </button>
                     </div>
                 </div>
@@ -122,35 +128,37 @@
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content border-0 shadow-lg rounded-4">
                 <div class="modal-header bg-primary text-white rounded-top-4">
-                    <h5 class="modal-title fw-bold"><i class="fa-solid fa-file-signature me-2"></i> Filter Request Form</h5>
+                    <h5 class="modal-title fw-bold"><i class="fa-solid fa-file-signature me-2"></i> <span data-i18n="modal_title">Filter Request Form</span></h5>
                     <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body p-4">
                     <form id="filterForm">
                         <div class="mb-3">
-                            <label class="form-label text-muted small fw-bold">Selected Product</label>
+                            <label class="form-label text-muted small fw-bold" data-i18n="lbl_selected">Selected Product</label>
                             <input type="text" id="selectedProduct" class="form-control fw-bold bg-light" readonly>
                         </div>
                         <div class="mb-3">
-                            <label class="form-label text-muted small fw-bold">Your Full Name</label>
-                            <input type="text" class="form-control" placeholder="e.g. Yashohara" required>
+                            <label class="form-label text-muted small fw-bold" data-i18n="lbl_name">Your Full Name</label>
+                            <input type="text" class="form-control" data-i18n-placeholder="ph_name" placeholder="e.g. Yashohara" required>
                         </div>
                         <div class="mb-3">
-                            <label class="form-label text-muted small fw-bold">Phone Number</label>
-                            <input type="tel" class="form-control" placeholder="07X XXX XXXX" required>
+                            <label class="form-label text-muted small fw-bold" data-i18n="lbl_phone">Phone Number</label>
+                            <input type="tel" class="form-control" data-i18n-placeholder="ph_phone" placeholder="07X XXX XXXX" required>
                         </div>
+                        
+                        <!-- Dynamic Payment Options Select Dropdown -->
                         <div class="mb-3">
-                            <label class="form-label text-muted small fw-bold">Payment Plan Option</label>
-                            <select class="form-select">
-                                <option value="full">Full Payment (Outright Purchase)</option>
-                                <option value="installment" selected>Monthly Installment Plan (12 Months)</option>
+                            <label class="form-label text-muted small fw-bold" data-i18n="lbl_plan">Payment Plan Option</label>
+                            <select class="form-select" id="paymentPlanSelect" required>
+                                <!-- JS වලින් Dynamic ලෙස පිරවෙයි -->
                             </select>
                         </div>
+
                         <div class="mb-3">
-                            <label class="form-label text-muted small fw-bold">Delivery / Installation Address</label>
-                            <textarea class="form-control" rows="2" placeholder="Enter full address" required></textarea>
+                            <label class="form-label text-muted small fw-bold" data-i18n="lbl_address">Delivery / Installation Address</label>
+                            <textarea class="form-control" rows="2" data-i18n-placeholder="ph_address" placeholder="Enter full address" required></textarea>
                         </div>
-                        <button type="submit" class="btn btn-primary w-100 rounded-pill py-2 fw-bold">
+                        <button type="submit" class="btn btn-primary w-100 rounded-pill py-2 fw-bold" data-i18n="btn_submit">
                             Submit Filter Request
                         </button>
                     </form>

@@ -119,10 +119,10 @@
                             </ul>
                         </div>
 
-                        <!-- Action Button (Industry Filter) -->
-                        <button class="btn btn-success btn-lg w-100 mt-auto rounded-pill fw-bold request-btn" onclick="openRequestModal('Industry Water Filter', 'Upon customer request only', 'industry')">
-                            <i class="fa-solid fa-industry me-2"></i> <span data-i18n="btn_req_ind">Request Industry Filter</span>
-                        </button>
+                        <!-- 🚀 Action Button (Industry Filter - Directly redirects to contact-sales.html) -->
+                        <a href="contact-sales.html" class="btn btn-success btn-lg w-100 mt-auto rounded-pill fw-bold request-btn text-decoration-none d-flex align-items-center justify-content-center">
+                            <i class="fa-solid fa-headset me-2"></i> <span data-i18n="btn_req_ind">Contact Sales Team</span>
+                        </a>
                     </div>
                 </div>
             </div>
@@ -130,7 +130,7 @@
         </div>
     </div>
 
-    <!-- 📝 ORDER / REQUEST POPUP MODAL -->
+    <!-- 📝 ORDER / REQUEST POPUP MODAL (For Home Filter) -->
     <div class="modal fade" id="requestModal" tabindex="-1" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered modal-lg">
             <div class="modal-content border-0 shadow-lg rounded-4">
@@ -164,7 +164,7 @@
                             </select>
                         </div>
 
-                        <!-- 💳 Payment Method Radio Options (NEW UPDATE) -->
+                        <!-- 💳 Payment Method Radio Options -->
                         <div class="mb-3">
                             <label class="form-label text-muted small fw-bold d-block" data-i18n="lbl_pay_type">Payment Method</label>
                             <div class="d-flex gap-4 p-2 rounded border bg-light">
@@ -183,7 +183,7 @@
                             </div>
                         </div>
 
-                        <!-- 🏦 Online Bank Details & Slip Upload Section (Toggles when Online Bank Payment is clicked) -->
+                        <!-- 🏦 Online Bank Details & Slip Upload Section -->
                         <div id="bankDetailsBox" class="mb-3 d-none p-3 rounded-3 bg-light border border-primary-subtle">
                             <h6 class="fw-bold text-primary mb-3 small border-bottom pb-2">
                                 <i class="fa-solid fa-university me-1"></i> <span data-i18n="bank_info_heading">Sales Representatives Bank Details</span>

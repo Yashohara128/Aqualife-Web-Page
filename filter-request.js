@@ -3,7 +3,7 @@ let currentType = 'home';
 let currentProductName = 'Home Water Filter';
 let currentPrice = 'LKR 54,990';
 
-// 🌐 Translations Dictionary with Bank Details & Radio Buttons
+// 🌐 Translations Dictionary with Updated Industry Button Text
 const translations = {
     en: {
         top_back_btn: "Back to Services",
@@ -36,7 +36,7 @@ const translations = {
         ind_inst_3: "01 Years Commercial Warranty Included",
         ind_inst_4: "10 Years Product Service Warranty",
         free_del_inst01: "Free Delivery & Free Installation",
-        btn_req_ind: "Request Industry Filter",
+        btn_req_ind: "Contact Sales Team", // 👈 UPDATED
 
         // Form Modal Labels
         modal_title: "Filter Request Form",
@@ -69,7 +69,6 @@ const translations = {
         opt_home_plan1: "Down Payment LKR 25,000 + LKR 5,000/mo (08 Months)",
         opt_home_plan2: "Down Payment LKR 15,000 + LKR 5,490/mo (10 Months)",
         opt_home_plan3: "Down Payment LKR 10,000 + LKR 5,990/mo (10 Months)",
-        opt_ind_full: "Upon customer request only",
 
         // Alerts
         msg_success: "Thank you! Your filter request has been submitted successfully. Our team will contact you shortly."
@@ -105,7 +104,7 @@ const translations = {
         ind_inst_3: "වසර 01ක ව්‍යාපාරික වගකීම් සහතිකය ඇතුළත්යි",
         ind_inst_4: "නිෂ්පාදන සේවා වගකීම් වසර 10ක්",
         free_del_inst01: "නොමිලේ ප්‍රවාහනය සහ සවිකර දීම",
-        btn_req_ind: "කාර්මික ෆිල්ටරය ලබාගන්න",
+        btn_req_ind: "අලෙවි නියෝජිතයින් අමතන්න", // 👈 UPDATED
 
         // Form Modal Labels
         modal_title: "ජල පෙරහන් ඉල්ලුම් පත්‍රය",
@@ -129,7 +128,7 @@ const translations = {
         btn_submit: "ඉල්ලුම්පත යොමු කරන්න",
 
         // Placeholders
-        ph_name: "උදා: නිමල පෙරේරා",
+        ph_name: "උදා: නිමල් පෙරේරා",
         ph_phone: "07X XXX XXXX",
         ph_address: "සම්පූර්ණ ලිපිනය ඇතුළත් කරන්න",
 
@@ -138,7 +137,6 @@ const translations = {
         opt_home_plan1: "මුලින් LKR 25,000 + මසකට LKR 5,000 බැගින් (මාස 08)",
         opt_home_plan2: "මුලින් LKR 15,000 + මසකට LKR 5,490 බැගින් (මාස 10)",
         opt_home_plan3: "මුලින් LKR 10,000 + මසකට LKR 5,990 බැගින් (මාස 10)",
-        opt_ind_full: "පාරිභෝගිකයාගේ ඉල්ලීම මත පමණකි",
 
         // Alerts
         msg_success: "ස්තූතියි! ඔබේ ජල පෙරහන් ඉල්ලුම්පත සාර්ථකව යොමු කෙරුණි. අපගේ කණ්ඩායම ඉක්මනින් ඔබව සම්බන්ධ කර ගනු ඇත."
@@ -171,16 +169,6 @@ function populatePaymentOptions(type, lang) {
             { val: 'plan1_25k', text: translations[lang].opt_home_plan1 },
             { val: 'plan2_15k', text: translations[lang].opt_home_plan2 },
             { val: 'plan3_10k', text: translations[lang].opt_home_plan3 }
-        ];
-        options.forEach(opt => {
-            const el = document.createElement('option');
-            el.value = opt.val;
-            el.textContent = opt.text;
-            select.appendChild(el);
-        });
-    } else if (type === 'industry') {
-        const options = [
-            { val: 'full', text: translations[lang].opt_ind_full }
         ];
         options.forEach(opt => {
             const el = document.createElement('option');

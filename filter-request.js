@@ -3,7 +3,7 @@ let currentType = 'home';
 let currentProductName = 'Home Water Filter';
 let currentPrice = 'LKR 54,990';
 
-// 🌐 Translations Dictionary with LKR 54,990 Updates
+// 🌐 Translations Dictionary with Bank Details & Radio Buttons
 const translations = {
     en: {
         top_back_btn: "Back to Services",
@@ -35,6 +35,7 @@ const translations = {
         ind_inst_2: "Flexible Business Payment Options",
         ind_inst_3: "01 Years Commercial Warranty Included",
         ind_inst_4: "10 Years Product Service Warranty",
+        free_del_inst01: "Free Delivery & Free Installation",
         btn_req_ind: "Request Industry Filter",
 
         // Form Modal Labels
@@ -43,6 +44,18 @@ const translations = {
         lbl_name: "Your Full Name",
         lbl_phone: "Phone Number",
         lbl_plan: "Payment Plan Option",
+        lbl_pay_type: "Payment Method",
+        opt_cash_plan: "Cash / Installment Payment",
+        opt_bank_plan: "Online Bank Payment",
+        bank_info_heading: "Sales Representatives Bank Details",
+        rep_1_title: "Sales Rep 01",
+        rep_2_title: "Sales Rep 02",
+        rep_3_title: "Sales Rep 03",
+        lbl_bank: "Bank:",
+        lbl_branch: "Branch:",
+        lbl_acc_no: "Acc No:",
+        lbl_beneficiary: "Name:",
+        lbl_upload_slip: "Upload Bank Deposit / Transfer Slip",
         lbl_address: "Delivery / Installation Address",
         btn_submit: "Submit Filter Request",
         
@@ -51,15 +64,12 @@ const translations = {
         ph_phone: "07X XXX XXXX",
         ph_address: "Enter full address",
         
-        // Dynamic Dropdown Options (Home Filter - LKR 54,990)
+        // Dynamic Dropdown Options
         opt_home_full: "Full Payment - Cash Discount (LKR 54,990 - Outright Purchase)",
         opt_home_plan1: "Down Payment LKR 25,000 + LKR 5,000/mo (08 Months)",
         opt_home_plan2: "Down Payment LKR 15,000 + LKR 5,490/mo (10 Months)",
         opt_home_plan3: "Down Payment LKR 10,000 + LKR 5,990/mo (10 Months)",
-
-        // Dynamic Dropdown Options (Industry Filter)
         opt_ind_full: "Upon customer request only",
-    
 
         // Alerts
         msg_success: "Thank you! Your filter request has been submitted successfully. Our team will contact you shortly."
@@ -75,13 +85,15 @@ const translations = {
         home_desc: "පවුලේ සැමට පිරිසිදු ජලය ලබාදෙන RO + UV + TDS Controller බහු-පියවර තාක්ෂණය.",
         full_price_label: "සම්පූර්ණ මිළ:",
         discount_tag: "විශේෂ වට්ටම්",
-        home_discount_note: " එකවර ගෙවීමේදී විශේෂ වට්ටම් මිල!",
+        home_discount_note: "එකවර ගෙවීමේදී විශේෂ වට්ටම් මිල!",
         unit: "/ එකකයක්",
         easy_plan_title: "පහසු වාරික ගෙවීමේ ක්‍රමය:",
         home_inst_1: "මුලින් LKR 25,000 ක් ගෙවා මසකට LKR 5,000 බැගින් (මාස 08)",
         home_inst_2: "මුලින් LKR 15,000 ක් ගෙවා මසකට LKR 5,490 බැගින් (මාස 10)",
         home_inst_3: "මුලින් LKR 10,000 ක් ගෙවා මසකට LKR 5,990 බැගින් (මාස 10)",
         free_del_inst: "නොමිලේ ප්‍රවාහනය සහ සවිකර දීම",
+        warrenty: "වසර 01ක වගකීම් සහතිකය සහිතයි",
+        service_warrenty: "නිෂ්පාදන සේවා වගකීම් වසර 10ක්",
         btn_req_home: "නිවාස ෆිල්ටරය ලබාගන්න",
 
         // Industry Filter Card
@@ -90,21 +102,29 @@ const translations = {
         ind_desc: "කර්මාන්තශාලා සහ කාර්යාල සඳහා ඉහළ ධාරිතාවයෙන් යුත් ජල පෙරහන් පද්ධතිය.",
         comm_plan_title: "ව්‍යාපාරික වාරික ගෙවීමේ ක්‍රමය:",
         ind_inst_2: "ව්‍යාපාර සඳහා පහසු ගෙවීමේ ක්‍රම",
-        warrenty: "වසර 01ක වගකීම් සහතිකය සහිතයි",
-        service_warrenty: "නිෂ්පාදන සේවා වගකීම් වසර 10ක්",
         ind_inst_3: "වසර 01ක ව්‍යාපාරික වගකීම් සහතිකය ඇතුළත්යි",
         ind_inst_4: "නිෂ්පාදන සේවා වගකීම් වසර 10ක්",
         free_del_inst01: "නොමිලේ ප්‍රවාහනය සහ සවිකර දීම",
-        
         btn_req_ind: "කාර්මික ෆිල්ටරය ලබාගන්න",
 
-    
         // Form Modal Labels
         modal_title: "ජල පෙරහන් ඉල්ලුම් පත්‍රය",
         lbl_selected: "තෝරාගත් නිෂ්පාදනය",
         lbl_name: "ඔබේ සම්පූර්ණ නම",
         lbl_phone: "දුරකථන අංකය",
         lbl_plan: "ගෙවීමේ ක්‍රමය",
+        lbl_pay_type: "ගෙවීම සිදුකරන ක්‍රමය",
+        opt_cash_plan: "අතින් මුදල් ගෙවීම / වාරික ක්‍රමය",
+        opt_bank_plan: "ඔන්ලයින් බැංකු තැන්පතු",
+        bank_info_heading: "අලෙවි නියෝජිතයින්ගේ බැංකු විස්තර",
+        rep_1_title: "අලෙවි නියෝජිත 01",
+        rep_2_title: "අලෙවි නියෝජිත 02",
+        rep_3_title: "අලෙවි නියෝජිත 03",
+        lbl_bank: "බැංකුව:",
+        lbl_branch: "ශාඛාව:",
+        lbl_acc_no: "ගිණුම් අංකය:",
+        lbl_beneficiary: "නම:",
+        lbl_upload_slip: "බැංකු ගෙවීම් රිසිට්පත (Slip) එකමුතු කරන්න",
         lbl_address: "ලබාදිය යුතු ලිපිනය",
         btn_submit: "ඉල්ලුම්පත යොමු කරන්න",
 
@@ -113,19 +133,30 @@ const translations = {
         ph_phone: "07X XXX XXXX",
         ph_address: "සම්පූර්ණ ලිපිනය ඇතුළත් කරන්න",
 
-        // Dynamic Dropdown Options (Home Filter - LKR 54,990)
+        // Dynamic Dropdown Options
         opt_home_full: "එකවර ගෙවීම - විශේෂ වට්ටම් මිල (LKR 54,990)",
         opt_home_plan1: "මුලින් LKR 25,000 + මසකට LKR 5,000 බැගින් (මාස 08)",
         opt_home_plan2: "මුලින් LKR 15,000 + මසකට LKR 5,490 බැගින් (මාස 10)",
         opt_home_plan3: "මුලින් LKR 10,000 + මසකට LKR 5,990 බැගින් (මාස 10)",
-
-        // Dynamic Dropdown Options (Industry Filter)
         opt_ind_full: "පාරිභෝගිකයාගේ ඉල්ලීම මත පමණකි",
 
         // Alerts
         msg_success: "ස්තූතියි! ඔබේ ජල පෙරහන් ඉල්ලුම්පත සාර්ථකව යොමු කෙරුණි. අපගේ කණ්ඩායම ඉක්මනින් ඔබව සම්බන්ධ කර ගනු ඇත."
     }
 };
+
+// 💳 Toggle Bank Details Container
+function togglePaymentType(type) {
+    const bankBox = document.getElementById('bankDetailsBox');
+    const slipInput = document.getElementById('bankSlipInput');
+    
+    if (type === 'bank') {
+        bankBox.classList.remove('d-none');
+    } else {
+        bankBox.classList.add('d-none');
+        if (slipInput) slipInput.value = '';
+    }
+}
 
 // 🔄 Populate Dropdown Options Dynamically
 function populatePaymentOptions(type, lang) {
@@ -149,8 +180,7 @@ function populatePaymentOptions(type, lang) {
         });
     } else if (type === 'industry') {
         const options = [
-            { val: 'full', text: translations[lang].opt_ind_full },
-            { val: 'plan_12m', text: translations[lang].opt_ind_plan1 }
+            { val: 'full', text: translations[lang].opt_ind_full }
         ];
         options.forEach(opt => {
             const el = document.createElement('option');
@@ -207,6 +237,10 @@ function openRequestModal(productName, price, type) {
     
     const currentLang = localStorage.getItem('aqualife_lang') || 'en';
     populatePaymentOptions(type, currentLang);
+
+    // Reset payment option to cash default
+    document.getElementById('payCash').checked = true;
+    togglePaymentType('cash');
 
     var requestModal = new bootstrap.Modal(document.getElementById('requestModal'));
     requestModal.show();

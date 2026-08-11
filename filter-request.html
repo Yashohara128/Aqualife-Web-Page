@@ -50,7 +50,7 @@
                         <h3 class="card-title fw-bold text-dark mb-2" data-i18n="home_title">Home Water Filter</h3>
                         <p class="text-muted small mb-3" data-i18n="home_desc">RO + UV + TDS Controller Multi-stage Pure Filtration for Families.</p>
 
-                        <!-- Price Section (Updated: LKR 54,990) -->
+                        <!-- Price Section -->
                         <div class="price-box mb-3 p-3 rounded">
                             <span class="text-muted small d-block" data-i18n="full_price_label">Full Price:</span>
                             <h2 class="price-text mb-0">
@@ -71,15 +71,14 @@
                                 <li class="mb-1"><i class="fa-solid fa-check text-success me-2"></i><span data-i18n="home_inst_1">First Down Payment LKR 25,000 you have to pay LKR 5,000 / Month (08 Months)</span></li>
                                 <li class="mb-1"><i class="fa-solid fa-check text-success me-2"></i><span data-i18n="home_inst_2">First Down Payment LKR 15,000 you have to pay LKR 5,490 / Month (10 Months)</span></li>
                                 <li class="mb-1"><i class="fa-solid fa-check text-success me-2"></i><span data-i18n="home_inst_3">First Down Payment LKR 10,000 you have to pay LKR 5,990 / Month (10 Months)</span></li>
-                                <li><i class="fa-solid fa-check text-success me-2"></i><span data-i18n="warrenty">01 Year Company Warrenty</span></li>
-                                <li><i class="fa-solid fa-check text-success me-2"></i><span data-i18n="service_warrenty">10 Years Product Service Warrenty</span></li>
-
+                                <li><i class="fa-solid fa-check text-success me-2"></i><span data-i18n="warrenty">01 Year Company Warranty</span></li>
+                                <li><i class="fa-solid fa-check text-success me-2"></i><span data-i18n="service_warrenty">10 Years Product Service Warranty</span></li>
                                 <li><i class="fa-solid fa-check text-success me-2"></i><span data-i18n="free_del_inst">Free Delivery & Free Installation</span></li>
                             </ul>
                         </div>
 
                         <!-- Action Button (Home Filter) -->
-                        <button class="btn btn-primary btn-lg w-100 mt-auto rounded-pill fw-bold request-btn" onclick="openRequestModal('Home Water Filter', 'LKR 74,990', 'home')">
+                        <button class="btn btn-primary btn-lg w-100 mt-auto rounded-pill fw-bold request-btn" onclick="openRequestModal('Home Water Filter', 'LKR 54,990', 'home')">
                             <i class="fa-solid fa-cart-shopping me-2"></i> <span data-i18n="btn_req_home">Request Home Filter</span>
                         </button>
                     </div>
@@ -117,8 +116,6 @@
                                 <li><i class="fa-solid fa-check text-success me-2"></i><span data-i18n="ind_inst_3">01 Years Commercial Warranty Included</span></li>
                                 <li><i class="fa-solid fa-check text-success me-2"></i><span data-i18n="ind_inst_4">10 Years Product Service Warranty</span></li>
                                 <li><i class="fa-solid fa-check text-success me-2"></i><span data-i18n="free_del_inst01">Free Delivery & Free Installation</span></li>
-
-
                             </ul>
                         </div>
 
@@ -135,7 +132,7 @@
 
     <!-- 📝 ORDER / REQUEST POPUP MODAL -->
     <div class="modal fade" id="requestModal" tabindex="-1" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
             <div class="modal-content border-0 shadow-lg rounded-4">
                 <div class="modal-header bg-primary text-white rounded-top-4">
                     <h5 class="modal-title fw-bold"><i class="fa-solid fa-file-signature me-2"></i> <span data-i18n="modal_title">Filter Request Form</span></h5>
@@ -147,15 +144,18 @@
                             <label class="form-label text-muted small fw-bold" data-i18n="lbl_selected">Selected Product</label>
                             <input type="text" id="selectedProduct" class="form-control fw-bold bg-light" readonly>
                         </div>
-                        <div class="mb-3">
-                            <label class="form-label text-muted small fw-bold" data-i18n="lbl_name">Your Full Name</label>
-                            <input type="text" class="form-control" data-i18n-placeholder="ph_name" placeholder="e.g. Nimal Perera" required>
-                        </div>
-                        <div class="mb-3">
-                            <label class="form-label text-muted small fw-bold" data-i18n="lbl_phone">Phone Number</label>
-                            <input type="tel" class="form-control" data-i18n-placeholder="ph_phone" placeholder="07X XXX XXXX" required>
-                        </div>
                         
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <label class="form-label text-muted small fw-bold" data-i18n="lbl_name">Your Full Name</label>
+                                <input type="text" class="form-control" data-i18n-placeholder="ph_name" placeholder="e.g. Nimal Perera" required>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label class="form-label text-muted small fw-bold" data-i18n="lbl_phone">Phone Number</label>
+                                <input type="tel" class="form-control" data-i18n-placeholder="ph_phone" placeholder="07X XXX XXXX" required>
+                            </div>
+                        </div>
+
                         <!-- Dynamic Payment Options Select Dropdown -->
                         <div class="mb-3">
                             <label class="form-label text-muted small fw-bold" data-i18n="lbl_plan">Payment Plan Option</label>
@@ -164,10 +164,84 @@
                             </select>
                         </div>
 
+                        <!-- 💳 Payment Method Radio Options (NEW UPDATE) -->
+                        <div class="mb-3">
+                            <label class="form-label text-muted small fw-bold d-block" data-i18n="lbl_pay_type">Payment Method</label>
+                            <div class="d-flex gap-4 p-2 rounded border bg-light">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="paymentType" id="payCash" value="cash" checked onchange="togglePaymentType('cash')">
+                                    <label class="form-check-label fw-bold text-dark small" for="payCash" data-i18n="opt_cash_plan">
+                                        Cash / Installment Payment
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="paymentType" id="payBank" value="bank" onchange="togglePaymentType('bank')">
+                                    <label class="form-check-label fw-bold text-primary small" for="payBank" data-i18n="opt_bank_plan">
+                                        <i class="fa-solid fa-building-columns me-1"></i> Online Bank Payment
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 🏦 Online Bank Details & Slip Upload Section (Toggles when Online Bank Payment is clicked) -->
+                        <div id="bankDetailsBox" class="mb-3 d-none p-3 rounded-3 bg-light border border-primary-subtle">
+                            <h6 class="fw-bold text-primary mb-3 small border-bottom pb-2">
+                                <i class="fa-solid fa-university me-1"></i> <span data-i18n="bank_info_heading">Sales Representatives Bank Details</span>
+                            </h6>
+                            
+                            <div class="row g-2 mb-3">
+                                <!-- Sales Rep 01 -->
+                                <div class="col-md-4">
+                                    <div class="p-2 border rounded bg-white shadow-sm h-100">
+                                        <strong class="text-primary small d-block border-bottom pb-1 mb-1 fw-bold">
+                                            <i class="fa-solid fa-user-tie me-1"></i> <span data-i18n="rep_1_title">Sales Rep 01</span>
+                                        </strong>
+                                        <div class="x-small text-secondary"><strong data-i18n="lbl_bank">Bank:</strong> Commercial Bank</div>
+                                        <div class="x-small text-secondary"><strong data-i18n="lbl_branch">Branch:</strong> Colombo Fort</div>
+                                        <div class="x-small text-secondary"><strong data-i18n="lbl_acc_no">Acc No:</strong> 1000 2345 6789</div>
+                                        <div class="x-small text-secondary"><strong data-i18n="lbl_beneficiary">Name:</strong> Aqualife Waters Pvt Ltd</div>
+                                    </div>
+                                </div>
+
+                                <!-- Sales Rep 02 -->
+                                <div class="col-md-4">
+                                    <div class="p-2 border rounded bg-white shadow-sm h-100">
+                                        <strong class="text-primary small d-block border-bottom pb-1 mb-1 fw-bold">
+                                            <i class="fa-solid fa-user-tie me-1"></i> <span data-i18n="rep_2_title">Sales Rep 02</span>
+                                        </strong>
+                                        <div class="x-small text-secondary"><strong data-i18n="lbl_bank">Bank:</strong> Sampath Bank</div>
+                                        <div class="x-small text-secondary"><strong data-i18n="lbl_branch">Branch:</strong> Nugegoda</div>
+                                        <div class="x-small text-secondary"><strong data-i18n="lbl_acc_no">Acc No:</strong> 0123 4567 8910</div>
+                                        <div class="x-small text-secondary"><strong data-i18n="lbl_beneficiary">Name:</strong> Aqualife Waters Pvt Ltd</div>
+                                    </div>
+                                </div>
+
+                                <!-- Sales Rep 03 -->
+                                <div class="col-md-4">
+                                    <div class="p-2 border rounded bg-white shadow-sm h-100">
+                                        <strong class="text-primary small d-block border-bottom pb-1 mb-1 fw-bold">
+                                            <i class="fa-solid fa-user-tie me-1"></i> <span data-i18n="rep_3_title">Sales Rep 03</span>
+                                        </strong>
+                                        <div class="x-small text-secondary"><strong data-i18n="lbl_bank">Bank:</strong> HNB Bank</div>
+                                        <div class="x-small text-secondary"><strong data-i18n="lbl_branch">Branch:</strong> Kandy</div>
+                                        <div class="x-small text-secondary"><strong data-i18n="lbl_acc_no">Acc No:</strong> 7890 1234 5678</div>
+                                        <div class="x-small text-secondary"><strong data-i18n="lbl_beneficiary">Name:</strong> Aqualife Waters Pvt Ltd</div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Deposit Slip Upload File Input -->
+                            <div class="bg-white p-2 border rounded">
+                                <label class="form-label text-muted small fw-bold mb-1" data-i18n="lbl_upload_slip">Upload Bank Deposit / Transfer Slip</label>
+                                <input type="file" class="form-control form-control-sm" id="bankSlipInput" accept="image/*,.pdf">
+                            </div>
+                        </div>
+
                         <div class="mb-3">
                             <label class="form-label text-muted small fw-bold" data-i18n="lbl_address">Delivery / Installation Address</label>
                             <textarea class="form-control" rows="2" data-i18n-placeholder="ph_address" placeholder="Enter full address" required></textarea>
                         </div>
+
                         <button type="submit" class="btn btn-primary w-100 rounded-pill py-2 fw-bold" data-i18n="btn_submit">
                             Submit Filter Request
                         </button>

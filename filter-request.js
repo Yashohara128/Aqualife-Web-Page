@@ -22,7 +22,6 @@ const translations = {
         home_inst_1: "First Down Payment LKR 25,000 you have to pay LKR 5,000 / Month (08 Months)",
         home_inst_2: "First Down Payment LKR 15,000 you have to pay LKR 5,490 / Month (10 Months)",
         home_inst_3: "First Down Payment LKR 10,000 you have to pay LKR 5,990 / Month (10 Months)",
-        card_interest: "0% Interest for selected Credit Cards",
         free_del_inst: "Free Delivery & Free Installation",
         warrenty: "01 Year Company Warranty",
         service_warrenty: "10 Years Product Service Warranty",
@@ -82,7 +81,6 @@ const translations = {
         home_inst_1: "මුලින් LKR 25,000 ක් ගෙවා මසකට LKR 5,000 බැගින් (මාස 08)",
         home_inst_2: "මුලින් LKR 15,000 ක් ගෙවා මසකට LKR 5,490 බැගින් (මාස 10)",
         home_inst_3: "මුලින් LKR 10,000 ක් ගෙවා මසකට LKR 5,990 බැගින් (මාස 10)",
-        card_interest: "තෝරාගත් ක්‍රෙඩිට් කාඩ්පත් සඳහා 0% පොලියක්",
         free_del_inst: "නොමිලේ ප්‍රවාහනය සහ සවිකර දීම",
         btn_req_home: "නිවාස ෆිල්ටරය ලබාගන්න",
 
@@ -96,7 +94,6 @@ const translations = {
         service_warrenty: "නිෂ්පාදන සේවා වගකීම් වසර 10ක්",
         ind_inst_3: "වසර 01ක ව්‍යාපාරික වගකීම් සහතිකය ඇතුළත්යි",
         ind_inst_4: "නිෂ්පාදන සේවා වගකීම් වසර 10ක්",
-        card_interest_01: "තෝරාගත් ක්‍රෙඩිට් කාඩ්පත් සඳහා 0% පොලියක්",
         free_del_inst01: "නොමිලේ ප්‍රවාහනය සහ සවිකර දීම",
         
         btn_req_ind: "කාර්මික ෆිල්ටරය ලබාගන්න",

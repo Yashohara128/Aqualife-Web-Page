@@ -48,7 +48,7 @@ const translations = {
         btn_submit: "Submit Filter Request",
         
         // Placeholders
-        ph_name: "e.g. Yashohara",
+        ph_name: "e.g. Nimal Perera",
         ph_phone: "07X XXX XXXX",
         ph_address: "Enter full address",
         
@@ -95,9 +95,13 @@ const translations = {
         warrenty: "වසර 01ක වගකීම් සහතිකය සහිතයි",
         service_warrenty: "නිෂ්පාදන සේවා වගකීම් වසර 10ක්",
         ind_inst_3: "වසර 01ක ව්‍යාපාරික වගකීම් සහතිකය ඇතුළත්යි",
+        ind_inst_4: "නිෂ්පාදන සේවා වගකීම් වසර 10ක්",
+        card_interest_01: "තෝරාගත් ක්‍රෙඩිට් කාඩ්පත් සඳහා 0% පොලියක්",
+        free_del_inst01: "නොමිලේ ප්‍රවාහනය සහ සවිකර දීම",
         
         btn_req_ind: "කාර්මික ෆිල්ටරය ලබාගන්න",
 
+    
         // Form Modal Labels
         modal_title: "ජල පෙරහන් ඉල්ලුම් පත්‍රය",
         lbl_selected: "තෝරාගත් නිෂ්පාදනය",
@@ -108,7 +112,7 @@ const translations = {
         btn_submit: "ඉල්ලුම්පත යොමු කරන්න",
 
         // Placeholders
-        ph_name: "උදා: යශෝහාර",
+        ph_name: "උදා: නිමල පෙරේරා",
         ph_phone: "07X XXX XXXX",
         ph_address: "සම්පූර්ණ ලිපිනය ඇතුළත් කරන්න",
 

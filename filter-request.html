@@ -119,7 +119,7 @@
                             </ul>
                         </div>
 
-                        <!-- 🚀 Action Button (Industry Filter - Directly redirects to contact-sales.html) -->
+                        <!-- Action Button (Industry Filter) -->
                         <a href="contact-sales.html" class="btn btn-success btn-lg w-100 mt-auto rounded-pill fw-bold request-btn text-decoration-none d-flex align-items-center justify-content-center">
                             <i class="fa-solid fa-headset me-2"></i> <span data-i18n="btn_req_ind">Contact Sales Team</span>
                         </a>
@@ -130,7 +130,7 @@
         </div>
     </div>
 
-    <!-- 📝 ORDER / REQUEST POPUP MODAL (For Home Filter) -->
+    <!-- 📝 ORDER / REQUEST POPUP MODAL -->
     <div class="modal fade" id="requestModal" tabindex="-1" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered modal-lg">
             <div class="modal-content border-0 shadow-lg rounded-4">
@@ -150,9 +150,11 @@
                                 <label class="form-label text-muted small fw-bold" data-i18n="lbl_name">Your Full Name</label>
                                 <input type="text" class="form-control" data-i18n-placeholder="ph_name" placeholder="e.g. Nimal Perera" required>
                             </div>
+                            
+                            <!-- 📱 PHONE NUMBER INPUT WITH STRICT 10-DIGIT VALIDATION -->
                             <div class="col-md-6 mb-3">
                                 <label class="form-label text-muted small fw-bold" data-i18n="lbl_phone">Phone Number</label>
-                                <input type="tel" class="form-control" data-i18n-placeholder="ph_phone" placeholder="07X XXX XXXX" required>
+                                <input type="tel" id="userPhone" class="form-control" data-i18n-placeholder="ph_phone" placeholder="07XXXXXXXX" pattern="[0-9]{10}" minlength="10" maxlength="10" required title="Please enter exactly 10 digits (e.g. 0712345678)">
                             </div>
                         </div>
 

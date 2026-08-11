@@ -3,7 +3,7 @@ let currentType = 'home';
 let currentProductName = 'Home Water Filter';
 let currentPrice = 'LKR 54,990';
 
-// 🌐 Translations Dictionary with Updated Industry Button Text
+// 🌐 Translations Dictionary with Phone Error Message
 const translations = {
     en: {
         top_back_btn: "Back to Services",
@@ -36,7 +36,7 @@ const translations = {
         ind_inst_3: "01 Years Commercial Warranty Included",
         ind_inst_4: "10 Years Product Service Warranty",
         free_del_inst01: "Free Delivery & Free Installation",
-        btn_req_ind: "Contact Sales Team", // 👈 UPDATED
+        btn_req_ind: "Contact Sales Team",
 
         // Form Modal Labels
         modal_title: "Filter Request Form",
@@ -61,7 +61,7 @@ const translations = {
         
         // Placeholders
         ph_name: "e.g. Nimal Perera",
-        ph_phone: "07X XXX XXXX",
+        ph_phone: "07XXXXXXXX",
         ph_address: "Enter full address",
         
         // Dynamic Dropdown Options
@@ -70,8 +70,9 @@ const translations = {
         opt_home_plan2: "Down Payment LKR 15,000 + LKR 5,490/mo (10 Months)",
         opt_home_plan3: "Down Payment LKR 10,000 + LKR 5,990/mo (10 Months)",
 
-        // Alerts
-        msg_success: "Thank you! Your filter request has been submitted successfully. Our team will contact you shortly."
+        // Alerts & Validation Errors
+        msg_success: "Thank you! Your filter request has been submitted successfully. Our team will contact you shortly.",
+        err_invalid_phone: "Please enter a valid 10-digit phone number (e.g. 0712345678)."
     },
     si: {
         top_back_btn: "සේවා වෙත ආපසු",
@@ -104,7 +105,7 @@ const translations = {
         ind_inst_3: "වසර 01ක ව්‍යාපාරික වගකීම් සහතිකය ඇතුළත්යි",
         ind_inst_4: "නිෂ්පාදන සේවා වගකීම් වසර 10ක්",
         free_del_inst01: "නොමිලේ ප්‍රවාහනය සහ සවිකර දීම",
-        btn_req_ind: "අලෙවි නියෝජිතයින් අමතන්න", // 👈 UPDATED
+        btn_req_ind: "අලෙවි නියෝජිතයින් අමතන්න",
 
         // Form Modal Labels
         modal_title: "ජල පෙරහන් ඉල්ලුම් පත්‍රය",
@@ -128,8 +129,8 @@ const translations = {
         btn_submit: "ඉල්ලුම්පත යොමු කරන්න",
 
         // Placeholders
-        ph_name: "උදා: නිමල් පෙරේරා",
-        ph_phone: "07X XXX XXXX",
+        ph_name: "උදා: නිමල පෙරේරා",
+        ph_phone: "07XXXXXXXX",
         ph_address: "සම්පූර්ණ ලිපිනය ඇතුළත් කරන්න",
 
         // Dynamic Dropdown Options
@@ -138,8 +139,9 @@ const translations = {
         opt_home_plan2: "මුලින් LKR 15,000 + මසකට LKR 5,490 බැගින් (මාස 10)",
         opt_home_plan3: "මුලින් LKR 10,000 + මසකට LKR 5,990 බැගින් (මාස 10)",
 
-        // Alerts
-        msg_success: "ස්තූතියි! ඔබේ ජල පෙරහන් ඉල්ලුම්පත සාර්ථකව යොමු කෙරුණි. අපගේ කණ්ඩායම ඉක්මනින් ඔබව සම්බන්ධ කර ගනු ඇත."
+        // Alerts & Validation Errors
+        msg_success: "ස්තූතියි! ඔබේ ජල පෙරහන් ඉල්ලුම්පත සාර්ථකව යොමු කෙරුණි. අපගේ කණ්ඩායම ඉක්මනින් ඔබව සම්බන්ධ කර ගනු ඇත.",
+        err_invalid_phone: "කරුණාකර ඉලක්කම් 10කින් යුත් නිවැරදි දුරකථන අංකයක් ඇතුළත් කරන්න (උදා: 0712345678)."
     }
 };
 
@@ -234,11 +236,23 @@ function openRequestModal(productName, price, type) {
     requestModal.show();
 }
 
-// 📝 Form Submit Handler
+// 📝 Form Submit Handler (WITH 10-DIGIT PHONE VALIDATION)
 document.getElementById('filterForm').addEventListener('submit', function(e) {
     e.preventDefault();
+
+    const phoneInput = document.getElementById('userPhone');
+    const phoneVal = phoneInput.value.trim();
+    const phoneRegex = /^\d{10}$/; // Strict Check: Exactly 10 digits only
     
     const currentLang = localStorage.getItem('aqualife_lang') || 'en';
+
+    // Validate Phone Number
+    if (!phoneRegex.test(phoneVal)) {
+        alert(translations[currentLang].err_invalid_phone);
+        phoneInput.focus();
+        return;
+    }
+    
     alert(translations[currentLang].msg_success);
     
     var modalElement = document.getElementById('requestModal');

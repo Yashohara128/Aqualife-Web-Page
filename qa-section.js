@@ -1,6 +1,6 @@
 // Admin Mode State (Default Off)
 let isAdminMode = false;
-const ADMIN_PASSWORD = "yash"; // 🔑 Admin password එක මෙතනින් වෙනස් කරගන්න පුළුවන්
+const ADMIN_PASSWORD = "yasho"; // 🔑 Admin password එක මෙතනින් වෙනස් කරගන්න පුළුවන්
 
 // Initial Default Reviews
 const defaultReviews = [

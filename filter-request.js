@@ -24,6 +24,8 @@ const translations = {
         home_inst_3: "First Down Payment LKR 10,000 you have to pay LKR 5,990 / Month (10 Months)",
         card_interest: "0% Interest for selected Credit Cards",
         free_del_inst: "Free Delivery & Free Installation",
+        warrenty: "01 Year Company Warranty",
+        service_warrenty: "10 Years Product Service Warranty",
         btn_req_home: "Request Home Filter",
 
         // Industry Filter Card
@@ -31,9 +33,9 @@ const translations = {
         ind_title: "Industry Water Filter",
         ind_desc: "Heavy Duty High Capacity Filtration System for Factories & Offices.",
         comm_plan_title: "Commercial Installment Plan:",
-        ind_inst_1: "Pay LKR 15,400 / Month (12 Months)",
         ind_inst_2: "Flexible Business Payment Options",
         ind_inst_3: "01 Years Commercial Warranty Included",
+        ind_inst_4: "10 Years Product Service Warranty",
         btn_req_ind: "Request Industry Filter",
 
         // Form Modal Labels
@@ -57,8 +59,8 @@ const translations = {
         opt_home_plan3: "Down Payment LKR 10,000 + LKR 5,990/mo (10 Months)",
 
         // Dynamic Dropdown Options (Industry Filter)
-        opt_ind_full: "Full Payment (LKR 185,000 - Outright Purchase)",
-        opt_ind_plan1: "Monthly Installment LKR 15,400/mo (12 Months)",
+        opt_ind_full: "Upon customer request only",
+    
 
         // Alerts
         msg_success: "Thank you! Your filter request has been submitted successfully. Our team will contact you shortly."
@@ -89,9 +91,11 @@ const translations = {
         ind_title: "කාර්මික භාවිතයට ජල පෙරහන",
         ind_desc: "කර්මාන්තශාලා සහ කාර්යාල සඳහා ඉහළ ධාරිතාවයෙන් යුත් ජල පෙරහන් පද්ධතිය.",
         comm_plan_title: "ව්‍යාපාරික වාරික ගෙවීමේ ක්‍රමය:",
-        ind_inst_1: "මසකට LKR 15,400 බැගින් (මාස 12)",
         ind_inst_2: "ව්‍යාපාර සඳහා පහසු ගෙවීමේ ක්‍රම",
-        ind_inst_3: "වසර 01ක වගකීම් සහතිකය සහිතයි",
+        warrenty: "වසර 01ක වගකීම් සහතිකය සහිතයි",
+        service_warrenty: "නිෂ්පාදන සේවා වගකීම් වසර 10ක්",
+        ind_inst_3: "වසර 01ක ව්‍යාපාරික වගකීම් සහතිකය ඇතුළත්යි",
+        
         btn_req_ind: "කාර්මික ෆිල්ටරය ලබාගන්න",
 
         // Form Modal Labels
@@ -115,8 +119,7 @@ const translations = {
         opt_home_plan3: "මුලින් LKR 10,000 + මසකට LKR 5,990 බැගින් (මාස 10)",
 
         // Dynamic Dropdown Options (Industry Filter)
-        opt_ind_full: "සම්පූර්ණ මුදල ගෙවීම (LKR 185,000)",
-        opt_ind_plan1: "මාසික වාරික ගෙවීම - මසකට LKR 15,400 බැගින් (මාස 12)",
+        opt_ind_full: "පාරිභෝගිකයාගේ ඉල්ලීම මත පමණකි",
 
         // Alerts
         msg_success: "ස්තූතියි! ඔබේ ජල පෙරහන් ඉල්ලුම්පත සාර්ථකව යොමු කෙරුණි. අපගේ කණ්ඩායම ඉක්මනින් ඔබව සම්බන්ධ කර ගනු ඇත."

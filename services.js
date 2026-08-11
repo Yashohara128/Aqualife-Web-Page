@@ -17,8 +17,8 @@ document.addEventListener('DOMContentLoaded', () => {
             service_1_desc: "Get professional analysis of your ordinary tap water condition absolutely free of charge.",
             service_2_title: "Request a Water Filter",
             service_2_desc: "Request a custom high-quality filtration unit setup perfectly tailored for your family needs.",
-            service_3_title: "After Service",
-            service_3_desc: "Enjoy non-stop reliable customer maintenance, membrane replacements & quick support."
+            service_3_title: "Q/A Section",
+            service_3_desc: "Have questions about our water treatment solutions? Find answers to frequently asked questions or contact our support team."
         },
         si: {
             main_title: "ඇක්වාලයිෆ් වෝටර්ස්",

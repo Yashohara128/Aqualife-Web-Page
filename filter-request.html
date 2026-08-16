@@ -139,29 +139,35 @@
                     <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body p-4">
-                    <form id="filterForm">
+                    
+                    <!-- 🛠️ UPDATED: Added enctype="multipart/form-data" -->
+                    <form id="filterForm" enctype="multipart/form-data">
+                        
                         <div class="mb-3">
                             <label class="form-label text-muted small fw-bold" data-i18n="lbl_selected">Selected Product</label>
-                            <input type="text" id="selectedProduct" class="form-control fw-bold bg-light" readonly>
+                            <!-- 🛠️ UPDATED: Added name="product" -->
+                            <input type="text" id="selectedProduct" name="product" class="form-control fw-bold bg-light" readonly>
                         </div>
                         
                         <div class="row">
                             <div class="col-md-6 mb-3">
                                 <label class="form-label text-muted small fw-bold" data-i18n="lbl_name">Your Full Name</label>
-                                <input type="text" class="form-control" data-i18n-placeholder="ph_name" placeholder="e.g. Nimal Perera" required>
+                                <!-- 🛠️ UPDATED: Added name="name" -->
+                                <input type="text" name="name" class="form-control" data-i18n-placeholder="ph_name" placeholder="e.g. Nimal Perera" required>
                             </div>
                             
-                            <!-- 📱 PHONE NUMBER INPUT WITH STRICT 10-DIGIT VALIDATION -->
                             <div class="col-md-6 mb-3">
                                 <label class="form-label text-muted small fw-bold" data-i18n="lbl_phone">Phone Number</label>
-                                <input type="tel" id="userPhone" class="form-control" data-i18n-placeholder="ph_phone" placeholder="07XXXXXXXX" pattern="[0-9]{10}" minlength="10" maxlength="10" required title="Please enter exactly 10 digits (e.g. 0712345678)">
+                                <!-- 🛠️ UPDATED: Added name="phone" -->
+                                <input type="tel" id="userPhone" name="phone" class="form-control" data-i18n-placeholder="ph_phone" placeholder="07XXXXXXXX" pattern="[0-9]{10}" minlength="10" maxlength="10" required title="Please enter exactly 10 digits (e.g. 0712345678)">
                             </div>
                         </div>
 
                         <!-- Dynamic Payment Options Select Dropdown -->
                         <div class="mb-3">
                             <label class="form-label text-muted small fw-bold" data-i18n="lbl_plan">Payment Plan Option</label>
-                            <select class="form-select" id="paymentPlanSelect" required>
+                            <!-- 🛠️ UPDATED: Added name="plan" -->
+                            <select class="form-select" id="paymentPlanSelect" name="plan" required>
                                 <!-- JS වලින් Dynamic ලෙස පිරවෙයි -->
                             </select>
                         </div>
@@ -235,19 +241,22 @@
                             <!-- Deposit Slip Upload File Input -->
                             <div class="bg-white p-2 border rounded">
                                 <label class="form-label text-muted small fw-bold mb-1" data-i18n="lbl_upload_slip">Upload Bank Deposit / Transfer Slip</label>
-                                <input type="file" class="form-control form-control-sm" id="bankSlipInput" accept="image/*,.pdf">
+                                <!-- 🛠️ UPDATED: Added name="slip" -->
+                                <input type="file" name="slip" class="form-control form-control-sm" id="bankSlipInput" accept="image/*,.pdf">
                             </div>
                         </div>
 
                         <div class="mb-3">
                             <label class="form-label text-muted small fw-bold" data-i18n="lbl_address">Delivery / Installation Address</label>
-                            <textarea class="form-control" rows="2" data-i18n-placeholder="ph_address" placeholder="Enter full address" required></textarea>
+                            <!-- 🛠️ UPDATED: Added name="address" -->
+                            <textarea class="form-control" name="address" rows="2" data-i18n-placeholder="ph_address" placeholder="Enter full address" required></textarea>
                         </div>
 
                         <button type="submit" class="btn btn-primary w-100 rounded-pill py-2 fw-bold" data-i18n="btn_submit">
                             Submit Filter Request
                         </button>
                     </form>
+
                 </div>
             </div>
         </div>

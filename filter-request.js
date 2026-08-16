@@ -236,30 +236,53 @@ function openRequestModal(productName, price, type) {
     requestModal.show();
 }
 
-// 📝 Form Submit Handler (WITH 10-DIGIT PHONE VALIDATION)
+// 📝 Form Submit Handler (Connected with PHP Backend)
 document.getElementById('filterForm').addEventListener('submit', function(e) {
     e.preventDefault();
 
     const phoneInput = document.getElementById('userPhone');
     const phoneVal = phoneInput.value.trim();
-    const phoneRegex = /^\d{10}$/; // Strict Check: Exactly 10 digits only
-    
+    const phoneRegex = /^\d{10}$/; // Strict Check: Exactly 10 digits
     const currentLang = localStorage.getItem('aqualife_lang') || 'en';
 
-    // Validate Phone Number
+    // 1. Validate Phone Number
     if (!phoneRegex.test(phoneVal)) {
         alert(translations[currentLang].err_invalid_phone);
         phoneInput.focus();
         return;
     }
-    
-    alert(translations[currentLang].msg_success);
-    
-    var modalElement = document.getElementById('requestModal');
-    var modal = bootstrap.Modal.getInstance(modalElement);
-    modal.hide();
-    
-    this.reset();
+
+    // 2. Prepare Form Data (Includes Inputs + File Upload)
+    const formData = new FormData(this);
+
+    // 3. Send POST Request to PHP Backend
+    fetch('submit_request.php', {
+        method: 'POST',
+        body: formData
+    })
+    .then(response => response.json())
+    .then(data => {
+        if (data.status === 'success') {
+            alert(translations[currentLang].msg_success);
+            
+            // Hide Modal
+            const modalElement = document.getElementById('requestModal');
+            const modal = bootstrap.Modal.getInstance(modalElement);
+            if (modal) {
+                modal.hide();
+            }
+
+            // Reset Form & Toggle View
+            document.getElementById('filterForm').reset();
+            togglePaymentType('cash');
+        } else {
+            alert('Error: ' + data.message);
+        }
+    })
+    .catch(error => {
+        console.error('Error:', error);
+        alert('Something went wrong with the server. Please try again!');
+    });
 });
 
 // 🚀 Load Saved Language on Page Load
@@ -267,3 +290,5 @@ document.addEventListener('DOMContentLoaded', () => {
     const savedLang = localStorage.getItem('aqualife_lang') || 'en';
     changeLanguage(savedLang);
 });
+
+

@@ -1,40 +1,6 @@
 // Admin Mode State (Default Off)
 let isAdminMode = false;
-const ADMIN_PASSWORD = "yasho"; // 🔑 Admin password එක මෙතනින් වෙනස් කරගන්න පුළුවන්
-
-// Initial Default Reviews
-const defaultReviews = [
-    {
-        id: 1,
-        name: "Kasun Rajapaksha",
-        rating: 5,
-        comment_en: "Great water filter! Water taste changed completely and installation was super fast. Highly recommended!",
-        comment_si: "ඉතාමත් හොඳ ජල පෙරහනක්! ජලයේ රසය සම්පූර්ණයෙන්ම වෙනස් වුණා. සවිකිරීමත් ඉතා ඉක්මනින් කර දුන්නා."
-    },
-    {
-        id: 2,
-        name: "Samanthi Dilrukshi",
-        rating: 5,
-        comment_en: "Awesome service! Very helpful sales representatives and easy installment options. Thanks Aqualife!",
-        comment_si: "විශිෂ්ට සේවාවක්! අලෙවි නියෝජිතයින් ඉතා සහයෝගයෙන් කටයුතු කළා. පහසු වාරික ක්‍රමත් තියෙනවා. ස්තූතියි Aqualife!"
-    }
-];
-
-// Load Reviews from LocalStorage or initialize with defaults
-function getStoredReviews() {
-    const stored = localStorage.getItem('aqualife_reviews');
-    if (stored) {
-        return JSON.parse(stored);
-    } else {
-        localStorage.setItem('aqualife_reviews', JSON.stringify(defaultReviews));
-        return defaultReviews;
-    }
-}
-
-// Save Reviews to LocalStorage
-function saveReviews(reviews) {
-    localStorage.setItem('aqualife_reviews', JSON.stringify(reviews));
-}
+const ADMIN_PASSWORD = "admin123";
 
 // 🌐 Translations Dictionary (English & Sinhala)
 const translations = {
@@ -81,7 +47,8 @@ const translations = {
         admin_wrong_pass: "Incorrect Admin Password!",
         admin_mode_on: "Admin Mode Activated! You can now delete reviews.",
         admin_mode_off: "Admin Mode Deactivated.",
-        btn_delete_review: "Delete"
+        btn_delete_review: "Delete",
+        no_reviews: "No reviews yet. Be the first to leave a review!"
     },
     si: {
         top_back_btn: "සේවා වෙත ආපසු",
@@ -126,9 +93,84 @@ const translations = {
         admin_wrong_pass: "ඇතුළත් කළ මුරපදය වැරදියි!",
         admin_mode_on: "Admin Mode සක්‍රියයි! දැන් ඔබට Reviews Delete කළ හැක.",
         admin_mode_off: "Admin Mode අක්‍රිය කරන ලදී.",
-        btn_delete_review: "මකා දමන්න"
+        btn_delete_review: "මකා දමන්න",
+        no_reviews: "තවමත් සමාලෝචන නොමැත. ඔබේ අදහස පළමුවෙන්ම එක් කරන්න!"
     }
 };
+
+// 📥 Fetch and Render Reviews from MySQL Database
+function loadReviews() {
+    fetch('get_reviews.php')
+        .then(response => response.json())
+        .then(res => {
+            if (res.status === 'success') {
+                renderReviews(res.data);
+            }
+        })
+        .catch(error => console.error('Error loading reviews:', error));
+}
+
+// 🎨 Render Reviews to UI Dynamically
+function renderReviews(reviews) {
+    const currentLang = localStorage.getItem('aqualife_lang') || 'en';
+    const feedbackList = document.getElementById('feedbackList');
+    if (!feedbackList) return;
+
+    feedbackList.innerHTML = '';
+
+    if (!reviews || reviews.length === 0) {
+        feedbackList.innerHTML = `<div class="col-12 text-center text-white-50"><p>${translations[currentLang].no_reviews}</p></div>`;
+        return;
+    }
+
+    reviews.forEach(review => {
+        const stars = '⭐'.repeat(parseInt(review.rating));
+
+        const deleteBtnHtml = isAdminMode ? `
+            <button class="btn btn-sm btn-danger py-0 px-2 rounded-pill fw-bold" onclick="deleteReview(${review.id})">
+                <i class="fa-solid fa-trash-can me-1"></i> ${translations[currentLang].btn_delete_review || 'Delete'}
+            </button>
+        ` : '';
+
+        const col = document.createElement('div');
+        col.className = 'col-md-6';
+        col.innerHTML = `
+            <div class="bg-white p-3 rounded-4 text-dark h-100 shadow-sm border-start border-4 border-warning position-relative">
+                <div class="d-flex justify-content-between align-items-center mb-1">
+                    <strong class="text-primary fs-6">${review.name}</strong>
+                    <div class="d-flex align-items-center gap-2">
+                        <span class="text-warning small">${stars}</span>
+                        ${deleteBtnHtml}
+                    </div>
+                </div>
+                <p class="text-muted small mb-0 opacity-90">${review.comment}</p>
+            </div>
+        `;
+        feedbackList.appendChild(col);
+    });
+}
+
+// 🗑️ Delete Review Function (Connected to PHP)
+function deleteReview(reviewId) {
+    if (!confirm("Are you sure you want to delete this review?")) return;
+
+    const formData = new FormData();
+    formData.append('id', reviewId);
+
+    fetch('delete_review.php', {
+        method: 'POST',
+        body: formData
+    })
+    .then(response => response.json())
+    .then(res => {
+        if (res.status === 'success') {
+            loadReviews();
+        } else {
+            alert('Error deleting review: ' + res.message);
+        }
+    })
+    .catch(error => console.error('Error deleting review:', error));
+}
 
 // 🔑 Toggle Admin Mode Function
 function toggleAdminMode() {
@@ -154,54 +196,7 @@ function toggleAdminMode() {
         adminBtn.innerHTML = '<i class="fa-solid fa-user-shield me-1"></i> Admin Mode';
     }
 
-    renderReviews(); // Re-render to show/hide delete buttons
-}
-
-// 🗑️ Delete Review Function
-function deleteReview(reviewId) {
-    let reviews = getStoredReviews();
-    reviews = reviews.filter(r => r.id !== reviewId);
-    saveReviews(reviews);
-    renderReviews();
-}
-
-// 🎨 Render Reviews to UI Dynamically
-function renderReviews() {
-    const reviews = getStoredReviews();
-    const currentLang = localStorage.getItem('aqualife_lang') || 'en';
-    const feedbackList = document.getElementById('feedbackList');
-    if (!feedbackList) return;
-
-    feedbackList.innerHTML = '';
-
-    reviews.forEach(review => {
-        const stars = '⭐'.repeat(parseInt(review.rating));
-        const commentText = currentLang === 'si' 
-            ? (review.comment_si || review.comment_en) 
-            : (review.comment_en || review.comment_si);
-
-        const deleteBtnHtml = isAdminMode ? `
-            <button class="btn btn-sm btn-danger py-0 px-2 rounded-pill fw-bold" onclick="deleteReview(${review.id})">
-                <i class="fa-solid fa-trash-can me-1"></i> ${translations[currentLang].btn_delete_review || 'Delete'}
-            </button>
-        ` : '';
-
-        const col = document.createElement('div');
-        col.className = 'col-md-6';
-        col.innerHTML = `
-            <div class="bg-white p-3 rounded-4 text-dark h-100 shadow-sm border-start border-4 border-warning position-relative">
-                <div class="d-flex justify-content-between align-items-center mb-1">
-                    <strong class="text-primary fs-6">${review.name}</strong>
-                    <div class="d-flex align-items-center gap-2">
-                        <span class="text-warning small">${stars}</span>
-                        ${deleteBtnHtml}
-                    </div>
-                </div>
-                <p class="text-muted small mb-0 opacity-90">${commentText}</p>
-            </div>
-        `;
-        feedbackList.appendChild(col);
-    });
+    loadReviews();
 }
 
 // 🌐 Language Switcher Function
@@ -237,39 +232,46 @@ function changeLanguage(lang) {
         btnSi.classList.remove('btn-light', 'active');
     }
 
-    renderReviews();
+    loadReviews();
 }
 
-// 💬 Dynamic Review Submission Logic
+// 💬 Dynamic Review Submission Logic (Connected to PHP)
 document.getElementById('feedbackForm').addEventListener('submit', function(e) {
     e.preventDefault();
 
     const name = document.getElementById('fbName').value.trim();
     const rating = document.getElementById('fbRating').value;
     const comment = document.getElementById('fbComment').value.trim();
-
-    const newReview = {
-        id: Date.now(), // Unique Timestamp ID
-        name: name,
-        rating: rating,
-        comment_en: comment,
-        comment_si: comment
-    };
-
-    const reviews = getStoredReviews();
-    reviews.unshift(newReview); // Add to beginning
-    saveReviews(reviews);
-
-    renderReviews();
-
     const currentLang = localStorage.getItem('aqualife_lang') || 'en';
-    alert(translations[currentLang].msg_fb_success);
 
-    this.reset();
+    const formData = new FormData();
+    formData.append('name', name);
+    formData.append('rating', rating);
+    formData.append('comment', comment);
+
+    fetch('submit_review.php', {
+        method: 'POST',
+        body: formData
+    })
+    .then(response => response.json())
+    .then(res => {
+        if (res.status === 'success') {
+            alert(translations[currentLang].msg_fb_success);
+            document.getElementById('feedbackForm').reset();
+            loadReviews();
+        } else {
+            alert('Error: ' + res.message);
+        }
+    })
+    .catch(error => {
+        console.error('Error submitting review:', error);
+        alert('Server error. Please try again!');
+    });
 });
 
-// 🚀 Load Saved Language and Render Reviews on Page Load
+// 🚀 Load Page Data
 document.addEventListener('DOMContentLoaded', () => {
     const savedLang = localStorage.getItem('aqualife_lang') || 'en';
     changeLanguage(savedLang);
+    loadReviews();
 });
